@@ -1,6 +1,6 @@
 # preliminaries #
 
-connection: "fivetran_looker_blocks_demo"
+connection: "filmtrack_bq"
 
 include: "*_*.view"
 include: "sf_*"
@@ -10,8 +10,8 @@ include: "*sf.dashboard"
 
 datagroup: fivetran_synced { # datagroup for caching policy and persistent derived tables (PDTs) #
   # check if any of the Salesforce tables surfaced in Looker have been updated and synced recently
-  sql_trigger:  SELECT MAX(done) FROM `salesforce.fivetran_audit`
-                WHERE schema = 'salesforce' AND table in ('account', 'campaign', 'contact', 'lead', 'opportunity', 'user') ;;
+  sql_trigger:  SELECT MAX(done) FROM `ft_salesforce.fivetran_audit`
+                WHERE schema = 'ft_salesforce' AND table in ('account', 'campaign', 'contact', 'lead', 'opportunity', 'user') ;;
   max_cache_age: "1 hour"   # invalidate cache after this amount of time and refresh data anyway, in case of failed ETL
 }
 

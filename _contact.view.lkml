@@ -3,7 +3,7 @@
 
 view: _contact {
   extension: required #add this if you re-generate this file
-  sql_table_name: salesforce.contact ;;
+  sql_table_name: ft_salesforce.contact ;;
 
   dimension: jigsaw_contact_id {
     primary_key: yes

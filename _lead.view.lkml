@@ -3,7 +3,7 @@
 
 view: _lead {
   extension: required #add this if you re-generate this file
-  sql_table_name: salesforce.lead ;;
+  sql_table_name: ft_salesforce.lead ;;
 
   dimension: id {
     primary_key: yes

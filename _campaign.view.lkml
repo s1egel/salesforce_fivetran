@@ -3,7 +3,7 @@
 
 view: _campaign {
   extension: required #add this if you re-generate this file
-  sql_table_name: salesforce.campaign ;;
+  sql_table_name: ft_salesforce.campaign ;;
 
   dimension: id {
     primary_key: yes

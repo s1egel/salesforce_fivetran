@@ -3,7 +3,7 @@
 
 view: _opportunity_history {
   extension: required #add this if you re-generate this file
-  sql_table_name: salesforce.opportunity_history ;;
+  sql_table_name: ft_salesforce.opportunity_history ;;
 
   dimension: id {
     primary_key: yes

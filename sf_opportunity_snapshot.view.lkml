@@ -10,7 +10,7 @@ view: historical_snapshot {
        snapshot_window as (
             select opportunity_history.*
                   , coalesce(lead(EXTRACT(date FROM created_date),1) over(partition by opportunity_id order by created_date), current_date) as stage_end
-                    from `fivetran-fivetran-fivetran-loo.salesforce.opportunity_history` AS opportunity_history
+                    from `fivetran-filmtrack-warehouse.ft_salesforce.opportunity_history` AS opportunity_history
       )
     -- https://discourse.looker.com/t/analytic-block-state-or-status-data-and-slowly-changing-dimensions/1937
       select dates.date as observation_date
