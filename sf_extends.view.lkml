@@ -18,7 +18,7 @@ view: account {
 
   dimension: is_customer {
     type: yesno
-    sql: ${type} LIKE 'Customer%' ;;
+    sql: ${type} LIKE '%Current Customer%' ;;
   }
 
   dimension: billing_city { group_label: "Billing Details" }
@@ -481,7 +481,7 @@ view: opportunity {
 
     filters: {
       field: opportunity.type
-      value: "\"New Customer\""
+      value: "New Business"
     }
 
     drill_fields: [opportunity.id, account.name, type]
@@ -494,7 +494,7 @@ view: opportunity {
 
     filters: {
       field: opportunity.type
-      value: "\"New Customer\""
+      value: "New Business"
     }
 
     drill_fields: [opportunity.id, account.name, type]

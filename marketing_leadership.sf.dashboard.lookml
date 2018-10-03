@@ -11,18 +11,20 @@
     field: account.billing_state
 
   elements:
-
   - name: total_active_customers
     title: 'Total Active Customers'
-    type: single_value
     model: salesforce_fivetran
     explore: account
-    measures: [account.count]
+    type: single_value
+    fields: [account.count]
     listen:
       state: account.billing_state
     filters:
-      account.is_customer: '"Yes"'
+      account.is_customer: 'Yes'
+      account.billing_state: ''
     sorts: [account.count desc]
+    limit: 10
+    column_limit: 50
     font_size: medium
     height: 2
     width: 4
@@ -33,6 +35,8 @@
     model: salesforce_fivetran
     explore: opportunity
     measures: [opportunity.total_revenue]
+    listen:
+      state: account.billing_state
     filters:
       opportunity.close_date: this quarter
       opportunity.stage_name: '"Closed - Won"'
@@ -48,6 +52,8 @@
     model: salesforce_fivetran
     explore: opportunity
     measures: [opportunity.average_deal_size]
+    listen:
+      state: account.billing_state
     filters:
       opportunity.close_date: this quarter
       opportunity.stage_name: '"Closed - Won"'
