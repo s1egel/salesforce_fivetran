@@ -15,7 +15,7 @@
     - historical_snapshot.stage_name_funnel
     filters:
       historical_snapshot.snapshot_date: 12 months
-      historical_snapshot.stage_name_funnel: "-Closed Won,-Closed Lost,-Unknown"
+      historical_snapshot.stage_name_funnel: "-Closed - Won,-Closed Lost,-Unknown"
     sorts:
     - historical_snapshot.snapshot_date desc
     - historical_snapshot.stage_name_funnel desc
@@ -66,7 +66,7 @@
     filters:
       historical_snapshot.close_date: after 2 quarters ago
       historical_snapshot.snapshot_date: before 0 minutes ago
-      historical_snapshot.stage_name_funnel: Closed Won,Negotiation/Review,Perception
+      historical_snapshot.stage_name_funnel: Closed - Won,Negotiation/Review,Perception
         Analysis,Proposal/Price Quote
     sorts:
     - historical_snapshot.snapshot_date

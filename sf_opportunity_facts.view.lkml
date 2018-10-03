@@ -3,12 +3,12 @@ view: sf_opportunity_facts {
     datagroup_trigger: fivetran_synced
     sql: SELECT account_id AS account_id
         , SUM(CASE
-                WHEN stage_name = 'Closed Won'
+                WHEN stage_name = 'Closed - Won'
                 THEN 1
                 ELSE 0
               END) AS opportunities_won
         , SUM(CASE
-                WHEN stage_name = 'Closed Won'
+                WHEN stage_name = 'Closed - Won'
                 THEN amount
                 ELSE 0
               END) AS all_time_amount

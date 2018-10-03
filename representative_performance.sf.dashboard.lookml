@@ -14,7 +14,7 @@
     type: field_filter
     explore: account
     field: account.business_segment
-    default_value: 'Enterprise'
+    default_value: 'Unknown'
 
   elements:
 
@@ -25,7 +25,6 @@
     explore: opportunity
     measures: [opportunity.count_won]
     listen:
-      sales_segment: account.business_segment
       sales_rep: opportunity_owner.name
     filters:
       opportunity.close_date: 'this year'
@@ -41,7 +40,6 @@
     explore: opportunity
     measures: [opportunity.total_revenue]
     listen:
-      sales_segment: account.business_segment
       sales_rep: opportunity_owner.name
     filters:
       opportunity.close_date: 'this year'
@@ -57,7 +55,6 @@
     explore: opportunity
     measures: [opportunity.count_lost]
     listen:
-      sales_segment: account.business_segment
       sales_rep: opportunity_owner.name
     filters:
       opportunity.close_date: 'this year'
@@ -73,7 +70,6 @@
     explore: opportunity
     measures: [opportunity.win_percentage]
     listen:
-      sales_segment: account.business_segment
       sales_rep: opportunity_owner.name
     filters:
       opportunity.close_date: 'this year'
